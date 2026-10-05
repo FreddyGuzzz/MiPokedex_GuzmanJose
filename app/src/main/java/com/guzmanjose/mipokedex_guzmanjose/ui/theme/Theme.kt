@@ -14,5 +14,9 @@ private val ColoresPokedex = lightColorScheme(
 
 @Composable
 fun PokedexTheme(content: @Composable () -> Unit) {
-    MaterialTheme(colorScheme = ColoresPokedex, content = content)
+    MaterialTheme(
+        colorScheme = ColoresPokedex,
+        typography = Typography,
+        content = content
+    )
 }
