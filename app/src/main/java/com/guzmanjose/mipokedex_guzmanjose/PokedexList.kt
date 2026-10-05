@@ -8,8 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.guzmanjose.mipokedex_guzmanjose.components.MenuPokedex
-import com.guzmanjose.mipokedex_guzmanjose.data.pokemonList
+import com.guzmanjose.mipokedex_guzmanjose.screens.MenuPokedexScreen
 import com.guzmanjose.mipokedex_guzmanjose.ui.theme.PokedexTheme
 
 class PokedexList : ComponentActivity() {
@@ -22,7 +21,7 @@ class PokedexList : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     containerColor = MaterialTheme.colorScheme.surface
                 ) { innerPadding ->
-                    MenuPokedex(pokemonList, innerPadding)
+                    MenuPokedexScreen(innerPadding)
                 }
             }
         }
