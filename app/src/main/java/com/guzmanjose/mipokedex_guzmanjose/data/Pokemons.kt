@@ -1,5 +1,8 @@
 package com.guzmanjose.mipokedex_guzmanjose.data
 
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.guzmanjose.mipokedex_guzmanjose.R
 import com.guzmanjose.mipokedex_guzmanjose.domain.Pokemon
 
@@ -27,3 +30,13 @@ val bulbasaur = Pokemon(
     ability = "Overgrow",
     image = R.drawable.bulbasaur
 )
+
+fun getPokemonByNumber(pokemon: Int): Pokemon{
+    if(pokemon == -1){
+
+    }else{
+        return pokemonList.filter{
+            it.number==pokemon
+        }.first()
+    }
+}

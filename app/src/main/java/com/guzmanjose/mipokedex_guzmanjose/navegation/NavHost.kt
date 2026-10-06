@@ -1,0 +1,24 @@
+package com.guzmanjose.mipokedex_guzmanjose.navegation
+
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.runtime.Composable
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.guzmanjose.mipokedex_guzmanjose.screens.MenuPokedexScreen
+import com.guzmanjose.mipokedex_guzmanjose.screens.PokemonDetailScreen
+
+@Composable
+fun MyApp(innerPadding: PaddingValues){
+    val navController = rememberNavController()
+
+    NavHost(navController, startDestination = PokemonList){
+        composable<PokemonList>{
+            MenuPokedexScreen(innerPadding)
+        }
+        composable<PokemonDetail>(){
+            val pokemon = it.arguments?.getInt("pokemon") ?: -1
+            PokemonDetailScreen(innerPadding, pokemon)
+        }
+    }
+}
