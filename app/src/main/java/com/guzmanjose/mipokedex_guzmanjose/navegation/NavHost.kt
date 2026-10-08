@@ -14,7 +14,8 @@ fun MyApp(innerPadding: PaddingValues){
 
     NavHost(navController, startDestination = PokemonList){
         composable<PokemonList>{
-            MenuPokedexScreen(innerPadding, onNavegateToDetail = {pokemon -> navController.navigate(PokemonDetail(pokemon))})
+            MenuPokedexScreen(innerPadding,
+                onNavigateToDetail = {pokemon -> navController.navigate(PokemonDetail(pokemon))})
         }
         composable<PokemonDetail>(){
             val pokemon = it.arguments?.getInt("pokemon") ?: -1

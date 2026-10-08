@@ -1,4 +1,4 @@
-package com.guzmanjose.mipokedex_guzmanjose.domain
+package com.guzmanjose.mipokedex_guzmanjose.model.domain
 
 data class Pokemon(
     val name: String,

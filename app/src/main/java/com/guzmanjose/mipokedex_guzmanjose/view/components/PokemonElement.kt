@@ -1,4 +1,4 @@
-package com.guzmanjose.mipokedex_guzmanjose.components
+package com.guzmanjose.mipokedex_guzmanjose.view.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -21,8 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.guzmanjose.mipokedex_guzmanjose.data.bulbasaur
-import com.guzmanjose.mipokedex_guzmanjose.domain.Pokemon
+import com.guzmanjose.mipokedex_guzmanjose.model.data.bulbasaur
+import com.guzmanjose.mipokedex_guzmanjose.model.domain.Pokemon
 import com.guzmanjose.mipokedex_guzmanjose.ui.theme.OffWhite
 import com.guzmanjose.mipokedex_guzmanjose.ui.theme.PokedexTheme
 import com.guzmanjose.mipokedex_guzmanjose.utilities.getColorByType

@@ -1,10 +1,7 @@
-package com.guzmanjose.mipokedex_guzmanjose.data
+package com.guzmanjose.mipokedex_guzmanjose.model.data
 
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import com.guzmanjose.mipokedex_guzmanjose.R
-import com.guzmanjose.mipokedex_guzmanjose.domain.Pokemon
+import com.guzmanjose.mipokedex_guzmanjose.model.domain.Pokemon
 
 val pokemonList = listOf(
     Pokemon("Bulbasaur", 1, "Grass/Poison", "There is a plant seed on its back from the day this Pokémon is born.", 0.7f, 6.9f, false, "Overgrow", R.drawable.bulbasaur),
