@@ -3,6 +3,7 @@ package com.guzmanjose.mipokedex_guzmanjose.components
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,10 +29,11 @@ import com.guzmanjose.mipokedex_guzmanjose.ui.theme.PokedexTheme
 import com.guzmanjose.mipokedex_guzmanjose.utilities.getColorByType
 
 @Composable
-fun PokemonRow(pokemon: Pokemon) {
+fun PokemonRow(pokemon: Pokemon, onClick: (Int) -> Unit = {}) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .clickable { onClick(pokemon.number) }
             .padding(10.dp)
     ) {
         Image(
@@ -76,11 +78,13 @@ fun PokemonRow(pokemon: Pokemon) {
 }
 
 @Composable
-fun FavoritePokemon(pokemon: Pokemon) {
+fun FavoritePokemon(pokemon: Pokemon, onClick: (Int) -> Unit = {}) {
     val colors = getColorByType(pokemon.type)
 
     Column(
-        modifier = Modifier.padding(vertical = 15.dp),
+        modifier = Modifier
+            .clickable { onClick(pokemon.number) }
+            .padding(vertical = 15.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -123,10 +127,11 @@ fun FavoritePokemon(pokemon: Pokemon) {
 }
 
 @Composable
-fun PokemonCell(pokemon: Pokemon) {
+fun PokemonCell(pokemon: Pokemon, onClick: (Int) -> Unit = {}) {
     val colors = getColorByType(pokemon.type)
 
     Column(
+        modifier = Modifier.clickable { onClick(pokemon.number) },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(5.dp)
     ) {

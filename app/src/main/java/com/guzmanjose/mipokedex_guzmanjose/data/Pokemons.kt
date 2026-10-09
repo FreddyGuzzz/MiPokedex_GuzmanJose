@@ -27,3 +27,7 @@ val bulbasaur = Pokemon(
     ability = "Overgrow",
     image = R.drawable.bulbasaur
 )
+
+fun getPokemonByNumber(number: Int): Pokemon? {
+    return pokemonList.firstOrNull { it.number == number }
+}

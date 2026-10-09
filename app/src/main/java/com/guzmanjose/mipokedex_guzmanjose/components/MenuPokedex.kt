@@ -16,28 +16,28 @@ import com.guzmanjose.mipokedex_guzmanjose.domain.Pokemon
 import com.guzmanjose.mipokedex_guzmanjose.ui.theme.PokedexTheme
 
 @Composable
-fun MenuPokedex(pokemonList: List<Pokemon>) {
+fun MenuPokedex(pokemonList: List<Pokemon>, onClick: (Int) -> Unit = {}) {
     LazyColumn {
         items(pokemonList) { pokemon ->
-            PokemonRow(pokemon)
+            PokemonRow(pokemon, onClick)
         }
     }
 }
 
 @Composable
-fun FavoritesRow(favoriteList: List<Pokemon>) {
+fun FavoritesRow(favoriteList: List<Pokemon>, onClick: (Int) -> Unit = {}) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         contentPadding = PaddingValues(horizontal = 10.dp)
     ) {
         items(favoriteList) { pokemon ->
-            FavoritePokemon(pokemon)
+            FavoritePokemon(pokemon, onClick)
         }
     }
 }
 
 @Composable
-fun PokedexGrid(pokemonList: List<Pokemon>) {
+fun PokedexGrid(pokemonList: List<Pokemon>, onClick: (Int) -> Unit = {}) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(3),
         contentPadding = PaddingValues(horizontal = 5.dp, vertical = 20.dp),
@@ -45,7 +45,7 @@ fun PokedexGrid(pokemonList: List<Pokemon>) {
         horizontalArrangement = Arrangement.spacedBy(5.dp)
     ) {
         items(pokemonList) { pokemon ->
-            PokemonCell(pokemon)
+            PokemonCell(pokemon, onClick)
         }
     }
 }
